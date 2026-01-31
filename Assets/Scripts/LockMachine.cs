@@ -32,11 +32,8 @@ public class LockMachine : MonoBehaviour, IInteractable
             Debug.Log("Don't need to fix a good machine"); 
             return; 
         }
-
-        Debug.Log("Interacted with lock machine"); 
         if (playerInventory.DoesContainResource(requiredResource))
         {
-            Debug.Log("Player contains required resource"); 
             playerInventory.RemoveResource(requiredResource); 
             currentFixNum++; 
             if (currentFixNum >= amountRequiredToFix)
@@ -48,7 +45,7 @@ public class LockMachine : MonoBehaviour, IInteractable
         } 
         else
         {
-            Debug.Log("Player does not contain the required resource"); 
+            Debug.Log("Player does not have the required resource"); 
         }
     }
 
