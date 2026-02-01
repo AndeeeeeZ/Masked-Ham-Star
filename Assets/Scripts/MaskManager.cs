@@ -1,12 +1,15 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class MaskManager : MonoBehaviour
 {
     [SerializeField] private bool DEBUG;
-    [SerializeField] private GameObject[] worlds; 
+    [SerializeField] private GameObject[] worlds;
+    [SerializeField] private Color[] floorColors;
+    [SerializeField] private SpriteRenderer[] toChangeColor;
     private InputActions input;
-    private int currentMaskIndex; 
+    private int currentMaskIndex;
     private MaskType currentMask;
 
     private void Awake()
@@ -57,24 +60,34 @@ public class MaskManager : MonoBehaviour
         {
             Debug.Log($"Equipping mask {index}");
         }
-        worlds[currentMaskIndex].SetActive(false); 
+        if (currentMaskIndex != 0)
+            worlds[currentMaskIndex].SetActive(false);
         switch (index)
         {
-            case 0: 
+            case 0:
                 currentMask = MaskType.NONE;
                 break;
-            case 1: 
-                currentMask = MaskType.GHOST; 
+            case 1:
+                currentMask = MaskType.GHOST;
                 break;
-            case 2: 
-                currentMask = MaskType.STEAM; 
-                break; 
-            case 3: 
-                currentMask = MaskType.CAT; 
-                break; 
+            case 2:
+                currentMask = MaskType.STEAM;
+                break;
+            case 3:
+                currentMask = MaskType.CAT;
+                break;
         }
-        currentMaskIndex = index; 
-        worlds[currentMaskIndex].SetActive(true); 
+        currentMaskIndex = index;
+        worlds[currentMaskIndex].SetActive(true);
+        ChangeColor(index);
+    }
+
+    private void ChangeColor(int index)
+    {
+        for (int i = 0; i < toChangeColor.Length; i++)
+        {
+            toChangeColor[i].color = floorColors[index];
+        }
     }
 
 }
