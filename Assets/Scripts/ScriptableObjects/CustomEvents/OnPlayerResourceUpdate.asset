@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2242d24d9b676c84aa642a50b1c79efb, type: 3}
-  m_Name: PlayerInventory
+  m_Script: {fileID: 11500000, guid: 4aab0e0c364721440965f51a6a2b7657, type: 3}
+  m_Name: OnPlayerResourceUpdate
   m_EditorClassIdentifier: 
-  resource1: 1
-  resource2: 1
-  onPlayerResourceUpdate: {fileID: 11400000, guid: 8b8e07c88ecfc914ba7183b14400eaea, type: 2}

@@ -21,6 +21,7 @@ public class MaskManager : MonoBehaviour
     private void Start()
     {
         currentMaskIndex = 0;
+        EquipMask(0);
     }
 
     private void OnEnable()
@@ -61,10 +62,9 @@ public class MaskManager : MonoBehaviour
         {
             Debug.Log($"Equipping mask {index}");
         }
-        if (currentMaskIndex != 0)
-        {
-            worlds[currentMaskIndex].SetActive(false);
-        }
+
+        worlds[currentMaskIndex].SetActive(false);
+
         switch (index)
         {
             case 0:
@@ -83,12 +83,12 @@ public class MaskManager : MonoBehaviour
         currentMaskIndex = index;
         worlds[currentMaskIndex].SetActive(true);
         ChangeColor(index);
-        ChangeMask(index); 
+        ChangeMask(index);
     }
 
     void ChangeMask(int index)
     {
-        maskSr.sprite = maskSprites[index]; 
+        maskSr.sprite = maskSprites[index];
     }
 
     private void ChangeColor(int index)

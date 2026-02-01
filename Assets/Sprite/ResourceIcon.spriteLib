@@ -16,9 +16,29 @@ MonoBehaviour:
   - m_Name: ResourceUI
     m_Hash: 536903241
     m_CategoryList: []
-    m_OverrideEntries: []
+    m_OverrideEntries:
+    - m_Name: COG
+      m_Hash: 314862962
+      m_Sprite: {fileID: 21300000, guid: 11590652e1130c448839c49c83eed2c0, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 11590652e1130c448839c49c83eed2c0, type: 3}
+    - m_Name: CANDLE
+      m_Hash: 197072796
+      m_Sprite: {fileID: 21300000, guid: 68686d9092bfe6f4bbe28a37a4b7bd65, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 68686d9092bfe6f4bbe28a37a4b7bd65, type: 3}
+    - m_Name: WRENCH
+      m_Hash: 386390246
+      m_Sprite: {fileID: 21300000, guid: 122853e82f9b67e47968474ebfa12da5, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 122853e82f9b67e47968474ebfa12da5, type: 3}
+    - m_Name: CANDY
+      m_Hash: 108996935
+      m_Sprite: {fileID: 21300000, guid: 57aeb4e73abdadb4a8603026649d461e, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 57aeb4e73abdadb4a8603026649d461e, type: 3}
     m_FromMain: 0
-    m_EntryOverrideCount: 0
+    m_EntryOverrideCount: 4
   m_PrimaryLibraryGUID: 
-  m_ModificationHash: 639054803679452702
+  m_ModificationHash: 639055501360340062
   m_Version: 1

@@ -4,10 +4,12 @@ using UnityEngine;
 public class ResourceInventory : ScriptableObject
 {
     public ResourceType resource1, resource2; 
+    public VoidEvent onPlayerResourceUpdate; 
 
     public void Reset()
     {
         resource1 = resource2 = ResourceType.NONE;
+        onPlayerResourceUpdate.Raise(); 
     }
 
     public bool DoesContainResource(ResourceType r)
@@ -37,6 +39,7 @@ public class ResourceInventory : ScriptableObject
             Debug.LogWarning("ERROR: Impossible case"); 
             return false; 
         }
+        onPlayerResourceUpdate.Raise(); 
         return true; 
     }
 
@@ -55,5 +58,6 @@ public class ResourceInventory : ScriptableObject
             resource1 = resource2; 
             resource2 = r; 
         }
+        onPlayerResourceUpdate.Raise(); 
     }
 }

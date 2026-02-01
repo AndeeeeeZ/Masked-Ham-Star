@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 155e9cb595586d747aaff0d328aa73d0
+guid: 3a3e7174efa66124db630c462efd203c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 734314073154710698
-    second: IMG_7554_0
-  - first:
-      213: -5165530577888815855
-    second: IMG_7554_1
+      213: -4463721564797006040
+    second: IMG_7557_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 275
+  spritePixelsToUnits: 130
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_7554_0
+      name: IMG_7557_0
       rect:
         serializedVersion: 2
-        x: 132
-        y: 63
-        width: 308
-        height: 167
+        x: 115
+        y: 80
+        width: 372
+        height: 615
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aace4fb42cec03a00800000000000000
-      internalID: 734314073154710698
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_7554_1
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 226
-        width: 270
-        height: 252
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 115d48cbe495058b0800000000000000
-      internalID: -5165530577888815855
+      spriteID: 82f060af2ecad02c0800000000000000
+      internalID: -4463721564797006040
       vertices: []
       indices: 
       edges: []
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IMG_7554_0: 734314073154710698
-      IMG_7554_1: -5165530577888815855
+      IMG_7557_0: -4463721564797006040
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

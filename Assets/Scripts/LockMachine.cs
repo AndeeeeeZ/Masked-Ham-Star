@@ -6,7 +6,7 @@ public class LockMachine : MonoBehaviour, IInteractable
     [SerializeField] private Color highlightColor; 
     [SerializeField] private ResourceType requiredResource; 
     [SerializeField] private ResourceInventory playerInventory; 
-    [SerializeField] private SpriteRenderer resourceIconSR; 
+    [SerializeField] private ResourceIcon resourceIcon; 
     [SerializeField] private GameObject resourceIconBubble; 
     [SerializeField] private int amountRequiredToFix; 
     [SerializeField] private ProgressBar progressBar; 
@@ -76,6 +76,11 @@ public class LockMachine : MonoBehaviour, IInteractable
     {
         Debug.Log((float)currentFixNum / amountRequiredToFix); 
         progressBar.UpdateProgressBar((float)currentFixNum / amountRequiredToFix); 
+    }
+
+    private void UpdateRequiredResource(ResourceType r)
+    {
+        resourceIcon.UpdateIcon(r); 
     }
 }
 
