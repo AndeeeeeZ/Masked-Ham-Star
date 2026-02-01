@@ -9,9 +9,13 @@ public class MaskManager : MonoBehaviour
     [SerializeField] private SpriteRenderer[] toChangeColor;
     [SerializeField] private Sprite[] maskSprites;
     [SerializeField] private SpriteRenderer maskSr;
+    [SerializeField] private GameState gameState;
+    [SerializeField] private VoidEvent[] onEquipMaskEvents;
+    [SerializeField] private VoidEvent[] onUnequipMaskEvents;
+
+
     private InputActions input;
     private int currentMaskIndex;
-    private MaskType currentMask;
 
     private void Awake()
     {
@@ -62,28 +66,30 @@ public class MaskManager : MonoBehaviour
         {
             Debug.Log($"Equipping mask {index}");
         }
+        if (index > gameState.currentState)
+            return;
 
+        // Take off current mask
+        if (currentMaskIndex >= 0 &&
+            currentMaskIndex < onUnequipMaskEvents.Length &&
+            onUnequipMaskEvents[currentMaskIndex] != null)
+        {
+            onUnequipMaskEvents[currentMaskIndex].Raise();
+        }
         worlds[currentMaskIndex].SetActive(false);
 
-        switch (index)
-        {
-            case 0:
-                currentMask = MaskType.NONE;
-                break;
-            case 1:
-                currentMask = MaskType.GHOST;
-                break;
-            case 2:
-                currentMask = MaskType.STEAM;
-                break;
-            case 3:
-                currentMask = MaskType.CAT;
-                break;
-        }
         currentMaskIndex = index;
+
         worlds[currentMaskIndex].SetActive(true);
         ChangeColor(index);
         ChangeMask(index);
+
+        if (currentMaskIndex >= 0 &&
+            currentMaskIndex < onEquipMaskEvents.Length &&
+            onEquipMaskEvents[currentMaskIndex] != null)
+        {
+            onEquipMaskEvents[currentMaskIndex].Raise();
+        }
     }
 
     void ChangeMask(int index)

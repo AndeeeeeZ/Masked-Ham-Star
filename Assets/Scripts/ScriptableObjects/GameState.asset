@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2445bd90dd430924ea3a8855bc939578, type: 3}
+  m_Name: GameState
+  m_EditorClassIdentifier: 
+  currentState: 3
+  OnGameStateChanged: {fileID: 11400000, guid: b1838c557e781604eb192a7eb3393a70, type: 2}
+  OnGhostMaskReleased: {fileID: 11400000, guid: 95d9ca3265214b442949d7a011574684, type: 2}
+  OnSteamMaskReleased: {fileID: 11400000, guid: ed365929730ebb84cb8c98ca1e4866c2, type: 2}
+  OnCatMaskReleased: {fileID: 11400000, guid: c658af1223f96034c922eed2c1c2ed11, type: 2}
