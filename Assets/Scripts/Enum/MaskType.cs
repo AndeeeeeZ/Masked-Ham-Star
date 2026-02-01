@@ -1,7 +1,7 @@
 public enum MaskType
 {
-    NONE,
-    GHOST,
-    STEAM,
-    CAT
+    NONE = 0,
+    GHOST = 1,
+    STEAM = 2,
+    CAT = 3
 }

@@ -4,13 +4,19 @@ using UnityEngine.InputSystem;
 public class MaskManager : MonoBehaviour
 {
     [SerializeField] private bool DEBUG;
-    [SerializeField] private Mask currentMask;
-
+    [SerializeField] private GameObject[] worlds; 
     private InputActions input;
+    private int currentMaskIndex; 
+    private MaskType currentMask;
 
     private void Awake()
     {
         input = new InputActions();
+    }
+
+    private void Start()
+    {
+        currentMaskIndex = 0;
     }
 
     private void OnEnable()
@@ -51,6 +57,24 @@ public class MaskManager : MonoBehaviour
         {
             Debug.Log($"Equipping mask {index}");
         }
+        worlds[currentMaskIndex].SetActive(false); 
+        switch (index)
+        {
+            case 0: 
+                currentMask = MaskType.NONE;
+                break;
+            case 1: 
+                currentMask = MaskType.GHOST; 
+                break;
+            case 2: 
+                currentMask = MaskType.STEAM; 
+                break; 
+            case 3: 
+                currentMask = MaskType.CAT; 
+                break; 
+        }
+        currentMaskIndex = index; 
+        worlds[currentMaskIndex].SetActive(true); 
     }
 
 }
