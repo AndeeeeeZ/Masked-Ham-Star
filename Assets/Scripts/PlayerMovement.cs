@@ -4,9 +4,13 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float horizontalMoveSpeed;
+    [SerializeField] private SpriteRenderer maskSr; 
 
     private InputActions input;
+    private Animator animator;
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
+    
     private float horizontalMovement;
 
     private void Awake()
@@ -17,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         horizontalMovement = 0f;
     }
 
@@ -42,5 +48,17 @@ public class PlayerMovement : MonoBehaviour
     private void Move(InputAction.CallbackContext context)
     {
         horizontalMovement = context.ReadValue<float>();
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMovement));
+
+        if (horizontalMovement > 0)
+        {
+            sr.flipX = false;
+            maskSr.flipX = false; 
+        }
+        else if (horizontalMovement < 0)
+        {
+            sr.flipX = true;
+            maskSr.flipX = true; 
+        }
     }
 }
