@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -26,6 +27,10 @@ public class MaskManager : MonoBehaviour
     {
         currentMaskIndex = 0;
         EquipMask(0);
+        for(int i = 1; i < onUnequipMaskEvents.Length; i++)
+        {
+            onUnequipMaskEvents[i].Raise(); 
+        }
     }
 
     private void OnEnable()

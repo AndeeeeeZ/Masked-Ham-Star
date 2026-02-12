@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SteamMachine : MonoBehaviour, IInteractable
@@ -7,15 +6,19 @@ public class SteamMachine : MonoBehaviour, IInteractable
     [SerializeField] private float maxTriggerTime, maxTimeUntilExplosion;
     [SerializeField] private ProgressBar progressBar;
     [SerializeField] private VoidEvent gameOver;
+    private Collider2D thisCollider;
     private float currentTime, nextTriggerTime;
     private bool triggered, counting;
     private Color originalColor;
     private SpriteRenderer sr;
 
-
-    private void Start()
+    private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
+        thisCollider = GetComponent<Collider2D>();
+    }
+    private void Start()
+    {
         originalColor = sr.color;
         counting = true;
         Reset();
@@ -67,13 +70,15 @@ public class SteamMachine : MonoBehaviour, IInteractable
     public void ShowSteamMachine()
     {
         sr.enabled = true;
-        progressBar.gameObject.SetActive(true); 
+        progressBar.gameObject.SetActive(true);
+        thisCollider.enabled = true;
     }
 
     public void HideSteamMachine()
     {
         sr.enabled = false;
-        progressBar.gameObject.SetActive(false); 
+        progressBar.gameObject.SetActive(false);
+        thisCollider.enabled = false;
     }
 
     private void Reset()
@@ -92,7 +97,7 @@ public class SteamMachine : MonoBehaviour, IInteractable
     private void UpdateProgressBar()
     {
         if (!progressBar.gameObject.activeSelf)
-            return; 
+            return;
         if (!triggered)
         {
             progressBar.UpdateProgressBar(0f);
